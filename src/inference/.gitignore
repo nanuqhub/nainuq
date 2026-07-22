@@ -1,0 +1,6 @@
+# Core dumps
+core-*
+core.*
+
+# Large numpy/binary files (optional, adjust as needed)
+*.npy

@@ -1,0 +1,84 @@
+site_name: NaiNUQ
+site_description: A deep learning emulator of the NANUQ sea-ice model
+site_author: Charlotte Durand
+site_url: https://cdurand95.github.io/nainuq
+
+repo_name: cdurand95/nainuq
+repo_url: https://github.com/cdurand95/nainuq
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Source Sans 3
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_style: numpy
+            show_source: true
+            show_root_heading: true
+            show_category_heading: true
+            members_order: source
+
+markdown_extensions:
+  - admonition          # !!! note / warning / tip blocks
+  - pymdownx.details    # collapsible admonitions
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - attr_list
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Architecture: architecture.md
+  - Data: data.md
+  - Training: training.md
+  - Inference: inference.md
+  - API Reference:
+      - Datasets: api/datasets.md
+      - Layers: api/layers.md
+      - Inference: api/inference.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/cdurand95/nanuq1
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/charlotte-durand-21a28414b
