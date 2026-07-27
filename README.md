@@ -90,7 +90,7 @@ cd nanuq1
 
 2. Install dependencies (see above).
 
-3. Download pre-trained model weights (link TBD) and place them in the `weights/` directory:
+3. Download pre-trained model weights availble on Hugging Face [here](https://huggingface.co/cdurand95/nainuq) and place them in the `weights/` directory:
 
 ```
 nanuq1/
