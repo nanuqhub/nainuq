@@ -177,13 +177,13 @@ This work is carried out within the [SASIP](https://github.com/sasip-climate) pr
 ---
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/cdurand95/nanuq1.svg?style=for-the-badge
-[contributors-url]: https://github.com/cdurand95/nanuq1/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/cdurand95/nanuq1.svg?style=for-the-badge
-[forks-url]: https://github.com/cdurand95/nanuq1/network/members
-[stars-shield]: https://img.shields.io/github/stars/cdurand95/nanuq1.svg?style=for-the-badge
-[stars-url]: https://github.com/cdurand95/nanuq1/stargazers
-[issues-shield]: https://img.shields.io/github/issues/cdurand95/nanuq1.svg?style=for-the-badge
-[issues-url]: https://github.com/cdurand95/nanuq1/issues
-[license-shield]: https://img.shields.io/github/license/cdurand95/nanuq1.svg?style=for-the-badge
-[license-url]: https://github.com/cdurand95/nanuq1/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/nanuqhub/nainuq.svg?style=for-the-badge
+[contributors-url]: https://github.com/nanuqhub/nainuq/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/nanuqhub/nainuq.svg?style=for-the-badge
+[forks-url]: https://github.com/nanuqhub/nainuq/network/members
+[stars-shield]: https://img.shields.io/github/stars/nanuqhub/nainuq.svg?style=for-the-badge
+[stars-url]: https://github.com/nanuqhub/nainuq/stargazers
+[issues-shield]: https://img.shields.io/github/issues/nanuqhub/nainuq.svg?style=for-the-badge
+[issues-url]: https://github.com/nanuqhub/nainuq/issues
+[license-shield]: https://img.shields.io/github/license/nanuqhub/nainuq.svg?style=for-the-badge
+[license-url]: https://github.com/nanuqhub/nainuq/blob/master/LICENSE.txt
