@@ -104,6 +104,12 @@ nanuq1/
 
 ## Usage
 
+### Downloading subset of test dataset
+
+A zenodo capsule hold a subset of the 2019 test dataset for users to easily play with the emulator, in the 6h temporal resolution and with sub-surface ocean currents.
+It is available here: 10.5281/zenodo.21703194
+
+
 ### Running inference
 
 ```bash
