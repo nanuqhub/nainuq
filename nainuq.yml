@@ -1,4 +1,4 @@
-name: nextsim_surrogate
+name: nainuq
 channels:
   - conda-forge
   - defaults

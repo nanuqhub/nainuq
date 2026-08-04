@@ -50,7 +50,7 @@ The emulator is designed to reproduce NANUQ outputs at a fraction of the computa
 | 12 h | Twice daily |
 | 24 h | Daily |
 
-> **Why emulate?** Running full numerical sea-ice simulations is computationally expensive. NaiNUQ provides a fast surrogate suitable for ensemble experiments, uncertainty quantification, and data-assimilation workflows.
+> **Why emulate?** Running full numerical sea-ice simulations is computationally expensive. NaiNUQ provides a fast surrogate suitable for ensemble experiments, uncertainty quantification, and data-assimilation workflows. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -69,13 +69,7 @@ Make sure the following are installed before proceeding:
 Install Python dependencies:
 
 ```bash
-pip install -r requirements.txt
-```
-
-Or with conda:
-
-```bash
-conda env create -f environment.yml
+conda env create -f nainuq.yml
 conda activate nainuq
 ```
 
