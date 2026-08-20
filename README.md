@@ -7,7 +7,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/cdurand95/nanuq1">
-    <img src="images/arctic.png" alt="Logo" width="80" height="80">
+    <img src="logo_nainuq.png" alt="Logo" width="300" height="300">
   </a>
 
   <h3 align="center">NaiNUQ</h3>
