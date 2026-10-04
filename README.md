@@ -101,10 +101,10 @@ nainuq/
 ### Downloading subset of test dataset
 
 A zenodo capsule hold a subset of the 2019 test dataset for users to easily play with the emulator, in the 6h temporal resolution and with sub-surface ocean currents to match the weights of the emulator saved on HuggingFace.
-It is available [here]((https://doi.org/10.5281/zenodo.23102333)
+It is available [here](https://doi.org/10.5281/zenodo.23102333)
 The dataset can be download with the command 
 ```bash
-curl -s "https://zenodo.org/api/records/21703194" | grep download_url
+curl -s "https://zenodo.org/api/records/23102334" | grep download_url
 ```
 
 It is saved as TFRecords (see the [documentation](https://www.tensorflow.org/tutorials/load_data/tfrecord?hl=fr)) and they are used as inputs of the neural network relying the function TFRecordDataset.py
