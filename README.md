@@ -104,7 +104,8 @@ A zenodo capsule hold a subset of the 2019 test dataset for users to easily play
 It is available [here](https://doi.org/10.5281/zenodo.23102333)
 The dataset can be download with the command 
 ```bash
-curl -s "https://zenodo.org/api/records/23102334" | grep download_url
+pip install zenodo_get
+zenodo_get 23102334
 ```
 
 It is saved as TFRecords (see the [documentation](https://www.tensorflow.org/tutorials/load_data/tfrecord?hl=fr)) and they are used as inputs of the neural network relying the function TFRecordDataset.py
