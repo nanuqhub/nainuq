@@ -105,6 +105,8 @@ It is available [here](https://doi.org/10.5281/zenodo.23102333)
 The dataset can be download with the command 
 ```bash
 pip install zenodo_get
+mkdir data
+cd data
 zenodo_get 23102334
 ```
 
