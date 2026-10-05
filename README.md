@@ -87,9 +87,9 @@ cd nanuq1
 3. Download pre-trained model weights availble on Hugging Face [here](https://huggingface.co/cdurand95/nainuq) and place them in the `weights/` directory:
 
 ```
-nainuq/
-└── weights/
-    └── last.ckpt
+pip install -U "huggingface_hub[cli]"
+huggingface-cli download cdurand95/nainuq --local-dir weights
+
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
