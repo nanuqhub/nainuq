@@ -78,7 +78,7 @@ conda activate nainuq
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/cdurand95/nanuq1.git
+git clone https://github.com/nanuqhub/nainuq.git
 cd nanuq1
 ```
 
