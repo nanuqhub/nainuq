@@ -83,7 +83,7 @@ class UNetModel(pl.LightningModule):
 
         self.N = 5
 
-        self.mask = np.load('/linkhome/rech/genrea01/ucm13rr/nanuq1/src/mask2_nanuk1.npy')
+        self.mask = np.load('./layers/mask2_nanuk1.npy')
 
         self.mask = torch.from_numpy(self.mask).float()
         self.mask = torch.reshape(self.mask, [1, 1, 128, 128])
