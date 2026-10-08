@@ -92,11 +92,11 @@ class Test:
 
         # Definition of minimal h_min and c_min for postprocessing step (cf neXtSIM code)
         if "sit" in self.sea_ice_variables:
-            self.hmin = (1e-5 - self.mean_input[0]) / self.std_input[0]
+            self.hmin = (1e-4 - self.mean_input[0]) / self.std_input[0]
             # self.hmin = 0.1*self.hmin
             self.h0 = -self.mean_input[0] / self.std_input[0]
         if "sic" in self.sea_ice_variables:
-            self.cmin = (0.0001 - self.mean_input[1]) / self.std_input[1]
+            self.cmin = (0.001 - self.mean_input[1]) / self.std_input[1]
             self.c0 = -self.mean_input[1] / self.std_input[1]
 
         # Selection of normalization constant if SIT only is learnt
@@ -147,11 +147,11 @@ class Test:
 
         # Definition of minimal h_min and c_min for postprocessing step (cf neXtSIM code)
         if "sit" in self.sea_ice_variables:
-            self.hmin = (1e-5 - self.mean_input[0]) / self.std_input[0]
+            self.hmin = (1e-4 - self.mean_input[0]) / self.std_input[0]
             # self.hmin = 0.1*self.hmin
             self.h0 = -self.mean_input[0] / self.std_input[0]
         elif "sic" in self.sea_ice_variables:
-            self.cmin = (1e-4 - self.mean_input[1]) / self.std_input[1]
+            self.cmin = (1e-3 - self.mean_input[1]) / self.std_input[1]
             self.c0 = -self.mean_input[1] / self.std_input[1]
 
         # Selection of normalization constant if SIT only is learnt
