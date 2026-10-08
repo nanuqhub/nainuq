@@ -1,0 +1,10 @@
+# TFRecord shards (data_2019.tfrecords.000, .001, ...)
+*.tfrecords*
+
+# Downloaded data and weights
+data/
+weights/
+
+# Notebook outputs from the demo
+notebooks/demo_output/
+.ipynb_checkpoints/
