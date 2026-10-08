@@ -74,7 +74,7 @@ Make sure the following are installed before proceeding:
 
 ```bash
 git clone https://github.com/nanuqhub/nainuq.git
-cd nanuq1
+cd nainuq
 ```
 
 2. Install dependencies (see above).
@@ -84,10 +84,9 @@ Install Python dependencies:
 conda env create -f nainuq.yml
 conda activate nainuq
 ```
-3. Download pre-trained model weights availble on Hugging Face [here](https://huggingface.co/cdurand95/nainuq) and place them in the `weights/` directory:
+3. Download pre-trained model weights available on Hugging Face [here](https://huggingface.co/cdurand95/nainuq) and place them in the `weights/` directory:
 
 ```
-pip install -U "huggingface_hub[cli]"
 huggingface-cli download cdurand95/nainuq --local-dir weights
 
 ```
@@ -96,7 +95,7 @@ huggingface-cli download cdurand95/nainuq --local-dir weights
 
 ---
 
-## Usage
+## Demo
 
 ### Downloading subset of test dataset
 
@@ -104,8 +103,6 @@ A zenodo capsule hold a subset of the 2019 test dataset for users to easily play
 It is available [here](https://doi.org/10.5281/zenodo.23102333)
 The dataset can be download with the command 
 ```bash
-pip install zenodo_get
-mkdir data
 cd data
 zenodo_get 23102334
 ```
@@ -114,7 +111,7 @@ It is saved as TFRecords (see the [documentation](https://www.tensorflow.org/tut
 
 ### Running inference
 
-To test the emulator, a demo notebook will be released, to ensure it works well. Otherwise, it can be run on a cluster usinf the slurm script `./inference/test_nainuq.slurm` or directly using the Python script `./inference/test.py`. The different arguments of the test script are described below
+To test the emulator, a demo notebook is available under `notebooks/nainuq_demo_6h_rmse.ipynb` to reproduce 6h sub-surface emulator 10 day forecast on the test years. Otherwise, it can be run on a cluster using the slurm script `./inference/test_nainuq.slurm` or directly using the Python script `./inference/test.py`. The different arguments of the test script are described below
 ```bash
 # Run inference
 python inference/test.py \
