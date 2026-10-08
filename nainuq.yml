@@ -3,48 +3,61 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - _libgcc_mutex=0.1
-  - _openmp_mutex=4.5
-  - blas=1.0
-  - bzip2=1.0.8
-  - ca-certificates=2024.12.31
-  - cffi=1.17.1
-  - future=0.18.3
-  - intel-openmp=2021.4.0
-  - ld_impl_linux-64=2.43
-  - libffi=3.4.2
-  - libgcc=14.2.0
-  - libgcc-ng=14.2.0
-  - libgomp=14.2.0
-  - liblzma=5.6.3
-  - liblzma-devel=5.6.3
-  - libnsl=2.0.1
-  - libsqlite=3.47.2
-  - libstdcxx-ng=11.2.0
-  - libuuid=2.38.1
-  - libxcrypt=4.4.36
-  - libzlib=1.3.1
-  - mkl=2021.4.0
-  - mkl-service=2.4.0
-  - mkl_fft=1.3.1
-  - mkl_random=1.2.2
-  - ncurses=6.5
-  - ninja=1.12.1
-  - ninja-base=1.12.1
-  - openssl=3.4.0
-  - pip=24.3.1
-  - pycparser=2.21
-  - python=3.8.20
-  - pyyaml=6.0.2
-  - readline=8.2
-  - setuptools=75.3.0
-  - tk=8.6.13
-  - typing_extensions=4.11.0
-  - wheel=0.45.1
-  - xz=5.6.3
-  - xz-gpl-tools=5.6.3
-  - xz-tools=5.6.3
-  - yaml=0.2.5
+  - _libgcc_mutex=0.1=conda_forge
+  - _openmp_mutex=4.5=8_kmp_llvm
+  - blas=1.0=openblas
+  - bzip2=1.0.8=hda65f42_10
+  - ca-certificates=2024.12.31=h06a4308_0
+  - cffi=1.17.1=py38h1fdaa30_0
+  - future=0.18.3=pyhd8ed1ab_0
+  - intel-openmp=2021.4.0=h06a4308_3561
+  - ld_impl_linux-64=2.43=h1423503_5
+  - libblas=3.9.0=26_linux64_openblas
+  - libcblas=3.9.0=26_linux64_openblas
+  - libffi=3.4.2=h7f98852_5
+  - libgcc=14.2.0=h767d61c_2
+  - libgcc-ng=14.2.0=h69a702a_2
+  - libgfortran=14.2.0=h69a702a_2
+  - libgfortran5=14.2.0=hf1ad2bd_2
+  - libgomp=14.2.0=h767d61c_2
+  - libhwloc=2.11.2=default_h0d58e46_1001
+  - libiconv=1.18=h3b78370_2
+  - liblapack=3.9.0=26_linux64_openblas
+  - liblzma=5.6.3=hb9d3cd8_1
+  - liblzma-devel=5.6.3=hb9d3cd8_1
+  - libnsl=2.0.1=hb9d3cd8_1
+  - libopenblas=0.3.28=pthreads_h94d23a6_1
+  - libsqlite=3.47.2=hee588c1_0
+  - libstdcxx=14.2.0=h8f9b012_2
+  - libstdcxx-ng=11.2.0=he4da1e4_16
+  - libuuid=2.38.1=h0b41bf4_0
+  - libxcrypt=4.4.36=h280c20c_2
+  - libxml2=2.13.5=h0d44e9d_1
+  - libzlib=1.3.1=hb9d3cd8_2
+  - llvm-openmp=20.1.8=h4922eb0_0
+  - mkl=2021.4.0=h8d4b97c_729
+  - mkl-service=2.4.0=py38h95df7f1_0
+  - mkl_fft=1.3.1=py38h8666266_1
+  - mkl_random=1.2.2=py38h1abd341_0
+  - ncurses=6.5=h2d0b736_3
+  - ninja=1.12.1=hff21bea_1
+  - ninja-base=1.12.1=hdb19cb5_0
+  - openblas=0.3.28=pthreads_h6ec200e_1
+  - openssl=3.4.0=h7b32b05_1
+  - pip=24.3.1=pyh8b19718_0
+  - pycparser=2.21=pyhd8ed1ab_0
+  - python=3.8.20=h4a871b0_2_cpython
+  - python_abi=3.8=9_cp38
+  - pyyaml=6.0.2=py38h2019614_0
+  - readline=8.2=h8c095d6_2
+  - setuptools=75.3.0=pyhd8ed1ab_0
+  - tbb=2021.13.0=hceb3a55_1
+  - tk=8.6.13=noxft_h366c992_103
+  - wheel=0.45.1=pyhd8ed1ab_0
+  - xz=5.6.3=hbcc6ac9_1
+  - xz-gpl-tools=5.6.3=hbcc6ac9_1
+  - xz-tools=5.6.3=hb9d3cd8_1
+  - yaml=0.2.5=h280c20c_3
   - pip:
       - absl-py==2.1.0
       - aiohappyeyeballs==2.4.4
@@ -92,13 +105,17 @@ dependencies:
       - grpcio==1.69.0
       - h11==0.14.0
       - h5py==3.11.0
+      - hf-xet==1.6.0
       - httpcore==1.0.7
       - httpx==0.28.1
+      - huggingface-hub==0.36.2
+      - humanize==4.10.0
       - idna==3.10
       - imageio==2.35.1
       - importlib-metadata==8.5.0
       - importlib-resources==6.4.5
       - iniconfig==2.0.0
+      - inquirerpy==0.3.4
       - ipykernel==6.29.5
       - ipython==8.12.3
       - ipywidgets==8.1.5
@@ -166,6 +183,7 @@ dependencies:
       - pandocfilters==1.5.1
       - parso==0.8.4
       - pexpect==4.9.0
+      - pfzy==0.3.4
       - pickleshare==0.7.5
       - pillow==10.4.0
       - pkgutil-resolve-name==1.3.10
@@ -235,10 +253,12 @@ dependencies:
       - webencodings==0.5.1
       - websocket-client==1.8.0
       - werkzeug==3.0.6
+      - wget==3.2
       - widgetsnbextension==4.0.13
       - wrapt==1.17.2
       - xarray==2023.1.0
       - yarl==1.15.2
       - zarr==2.16.1
+      - zenodo-get==1.6.1
       - zipp==3.20.2
-prefix: /home/ducharlo/.conda/envs/nextsim_surrogate
+prefix: /home/ducharlo/.conda/envs/nainuq
