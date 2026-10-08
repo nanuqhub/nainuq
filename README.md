@@ -64,14 +64,9 @@ Make sure the following are installed before proceeding:
 
 - Python ≥ 3.9
 - `pip` or `conda`
-- (Optional) A CUDA-capable GPU for accelerated inference
+- (Optional) A CUDA-capable GPU for accelerated inference (in order to run the demo notebook, for the two years forecast, a 40Go RAM GPU is required)
 
-Install Python dependencies:
 
-```bash
-conda env create -f nainuq.yml
-conda activate nainuq
-```
 
 ### Installation
 
@@ -83,7 +78,12 @@ cd nanuq1
 ```
 
 2. Install dependencies (see above).
+Install Python dependencies:
 
+```bash
+conda env create -f nainuq.yml
+conda activate nainuq
+```
 3. Download pre-trained model weights availble on Hugging Face [here](https://huggingface.co/cdurand95/nainuq) and place them in the `weights/` directory:
 
 ```
