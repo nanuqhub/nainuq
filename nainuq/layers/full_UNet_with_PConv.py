@@ -293,7 +293,7 @@ class PConv_UNetModel(pl.LightningModule):
         self.save_config()
         
         #Save mask
-        self.mask = np.load('/linkhome/rech/genrea01/ucm13rr/nanuq1/src/mask2_nanuk1.npy')
+        self.mask = np.load(os.path.join(os.path.dirname(os.path.abspath(__file__)), "mask2_nanuk1.npy"))
         self.mask = torch.from_numpy(self.mask).float()
         #self.mask = self.mask.permute(2, 0, 1).unsqueeze(0)
         print(self.mask)

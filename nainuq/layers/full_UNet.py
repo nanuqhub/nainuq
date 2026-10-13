@@ -83,13 +83,12 @@ class UNetModel(pl.LightningModule):
 
         self.N = 5
 
-        self.mask = np.load('./layers/mask2_nanuk1.npy')
-
-        self.mask = torch.from_numpy(self.mask).float()
-        self.mask = torch.reshape(self.mask, [1, 1, 128, 128])
-        # Move mask to GPU if available
-        if torch.cuda.is_available():
-            self.mask = self.mask.cuda()
+        _mask = np.load(os.path.join(os.path.dirname(os.path.abspath(__file__)), "mask2_nanuk1.npy"))
+        # Register as a non-persistent buffer so model.to(device) moves it too
+        # (works on CUDA, Apple MPS and CPU).
+        self.register_buffer(
+            "mask", torch.reshape(torch.from_numpy(_mask).float(), [1, 1, 128, 128]), persistent=False
+        )
         
         # Initialize metrics tracking
         self.metrics_history = {

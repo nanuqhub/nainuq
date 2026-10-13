@@ -1,0 +1,13 @@
+# Downloaded model weights (fetch from HuggingFace instead)
+weights/
+
+# Local test dataset (download from Zenodo instead)
+data/*.tfrecords.*
+
+# Local inference outputs
+out_local/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/

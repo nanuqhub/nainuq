@@ -53,9 +53,14 @@ class Test:
         self.save_pred = save_pred
         self.device = next(model.parameters()).device
 
-        self.mask = np.load(
-            "/linkhome/rech/genrea01/ucm13rr/nanuq1/src/mask2_nanuk1.npy"
-        )
+        # Resolve the land mask relative to this repository instead of the
+        # authors' cluster path, so the emulator runs on a local machine.
+        _mask_candidates = [
+            os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "mask2_nanuk1.npy"),
+            os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "layers", "mask2_nanuk1.npy"),
+        ]
+        _mask_path = next((p for p in _mask_candidates if os.path.exists(p)), _mask_candidates[0])
+        self.mask = np.load(_mask_path)
         # self.mask = torch.from_numpy(self.mask).float()
         # self.mask = self.mask.permute(2, 0, 1).unsqueeze(0)
         # self.mask = torch.reshape(self.mask, [1, 1, 128, 128])
