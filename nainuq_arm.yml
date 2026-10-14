@@ -1,0 +1,19 @@
+name: nainuq_arm
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - torch==2.14.1
+      - tensorflow==2.16.2
+      - numpy==1.26.4
+      - pandas==2.3.3
+      - matplotlib==3.10.9
+      - pytorch-lightning==2.6.6
+      - torchmetrics==1.9.0
+      - huggingface-hub==2.2.0
+      - tqdm==4.70.1
+      - jupyterlab==4.6.4
+      - nbconvert==7.17.2
+      - nbformat==5.11.1

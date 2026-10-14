@@ -1,6 +1,6 @@
 # Training
 
-
+We detail here the different scripts to launch training
 
 ## Launching training
 
@@ -58,3 +58,5 @@ lambda_PINN=${lambda_PINN_values[$((idx % n_lambda_PINN))]}
 export SAVE_DIR="${BASE_DIR}lambda_bias_${lambda_bias}_lambda_TV_${lambda_TV}_lambda_PINN_${lambda_PINN}/"
 mkdir -p "$SAVE_DIR"
 ```
+
+

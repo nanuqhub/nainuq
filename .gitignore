@@ -6,6 +6,7 @@ data/*.tfrecords.*
 
 # Local inference outputs
 out_local/
+notebooks/two_year_output/
 
 # Python
 __pycache__/

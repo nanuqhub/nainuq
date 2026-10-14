@@ -64,7 +64,9 @@ Make sure the following are installed before proceeding:
 
 - Python ≥ 3.9
 - `pip` or `conda`
-- (Optional) A CUDA-capable GPU for accelerated inference (in order to run the demo notebook, for the two years forecast, a 40Go RAM GPU is required)
+- Inference runs on **CPU, CUDA GPU, or Apple Silicon (MPS)**. A CUDA GPU or an MPS device gives
+  near-real-time inference, but the code also runs on CPU. The two-year forecast only needs ~a few
+  hundred MB of RAM because data is streamed from disk (no 40 GB GPU/RAM requirement).
 
 
 
@@ -77,13 +79,26 @@ git clone https://github.com/nanuqhub/nainuq.git
 cd nainuq
 ```
 
-2. Install dependencies (see above).
-Install Python dependencies:
+2. Create a conda environment. Two files are provided:
+
+- `nainuq.yml` — Linux with a CUDA-capable GPU (original training/inference setup):
 
 ```bash
 conda env create -f nainuq.yml
 conda activate nainuq
 ```
+
+- `nainuq_arm.yml` — macOS on Apple Silicon (MPS), used to run `nainuq_two_year_forecast.ipynb`:
+
+```bash
+conda env create -f nainuq_arm.yml
+conda activate nainuq_arm
+```
+
+> On Apple Silicon the `nainuq` environment can crash (SIGABRT) while reading TFRecords; use
+> `nainuq_arm` for the notebooks. You can create a kernel for Jupyter with:
+> `python -m ipykernel install --user --name nainuq_arm`
+
 3. Download pre-trained model weights available on Hugging Face [here](https://huggingface.co/cdurand95/nainuq) and place them in the `weights/` directory:
 
 ```
@@ -109,9 +124,37 @@ zenodo_get 23102334
 
 It is saved as TFRecords (see the [documentation](https://www.tensorflow.org/tutorials/load_data/tfrecord?hl=fr)) and they are used as inputs of the neural network relying the function TFRecordDataset.py
 
+### Downloading the two-year test dataset
+
+The **full two-year test set (2019 and 2020)** used by `nainuq_two_year_forecast.ipynb` is available on
+[Zenodo](https://doi.org/10.5281/zenodo.23102333). Place the TFRecord shards (`data_2019.tfrecords.*`
+and `data_2020.tfrecords.*`) together with the normalisation constants (`sea_ice_*.npy`) in the `data/`
+directory:
+
+```bash
+cd data
+zenodo_get 23102334
+```
+
 ### Running inference
 
-To test the emulator, a demo notebook is available under `notebooks/nainuq_demo_6h_rmse.ipynb` to reproduce 6h sub-surface emulator 10 day forecast on the test years. Otherwise, it can be run on a cluster using the slurm script `./inference/test_nainuq.slurm` or directly using the Python script `./inference/test.py`. The different arguments of the test script are described below
+To test the emulator, a demo notebook is available under `notebooks/nainuq_demo_6h_rmse.ipynb` to
+reproduce 6h sub-surface emulator 10 day forecast on the test years. A second notebook,
+`notebooks/nainuq_two_year_forecast.ipynb`, runs the emulator over the **full two years** (2019+2020,
+1440 forecasts every 12 h), reports the **NN inference timing**, and is **memory-efficient**: it
+streams the TFRecords from disk instead of loading them all, so it runs on a laptop with 16 GB RAM and
+does not save the prediction fields (only the aggregate RMSE / bias / persistence metric arrays in
+`notebooks/two_year_output/`).
+
+To run the two-year notebook from the command line:
+
+```bash
+conda activate nainuq_arm
+jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=7200 \
+    notebooks/nainuq_two_year_forecast.ipynb
+```
+
+Otherwise, it can be run on a cluster using the slurm script `./inference/test_nainuq.slurm` or directly using the Python script `./inference/test.py`. The different arguments of the test script are described below
 ```bash
 # Run inference
 python inference/test.py \
