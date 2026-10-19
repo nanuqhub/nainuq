@@ -29,6 +29,26 @@ from .config import Config
 from .grid import Regridder, build_target_grid, pad_trim_to_grid
 
 
+# Map GRIB code (used in the ERA5 filename) -> variable name (used inside the file).
+# Filenames look like ``ERA5_hourly_var167_y2010.nc`` while the netCDF variable
+# inside is named ``t2m``.
+ERA5_CODE_TO_NAME = {
+    "var167": "t2m",
+    "var165": "u10",
+    "var166": "v10",
+    "var168": "d2m",
+    "var169": "msdswrf",
+    "var172": "mtpr",
+    "var175": "msdlwrf",
+}
+ERA5_NAME_TO_CODE = {name: code for code, name in ERA5_CODE_TO_NAME.items()}
+
+
+def _era5_file_code(var: str) -> str:
+    """Return the GRIB code used in the ERA5 filename for a logical variable."""
+    return ERA5_NAME_TO_CODE.get(var, var)
+
+
 # --------------------------------------------------------------------------- #
 # NANUQ readers
 # --------------------------------------------------------------------------- #
@@ -71,7 +91,7 @@ def open_era5(cfg: Config, variables: List[str], year: int) -> xr.Dataset:
     parts = []
     for var in variables:
         pattern = os.path.join(cfg.atmo_forcings_dir, cfg.atmo_file_pattern)
-        pattern = pattern.replace("{var}", var).replace("{year}", str(year))
+        pattern = pattern.replace("{var}", _era5_file_code(var)).replace("{year}", str(year))
         files = sorted(glob.glob(pattern))
         if not files:
             raise FileNotFoundError(f"No ERA5 {var} files for {year} matching {pattern}")
